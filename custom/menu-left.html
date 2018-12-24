@@ -1,3 +1,4 @@
+
 {{#if manager.home}}
 <div class="page-header">
   <h1><small>{{@root.text.site}}</small></h1>
@@ -11,25 +12,13 @@
   <li class="list-group-item pointer" data-config="true" data-manager-show="manager-files">
     {{@root.text.navigation}}
   </li>
-  {{#isAuthorized '/abe/references' @root.user.role.workflow}}
-  <li class="list-group-item pointer" >
-    <a href="/abe/reference">edit references</a>
-  </li>
-  {{/isAuthorized}}
-  {{#isAuthorized '/abe/structure' @root.user.role.workflow}}
-  <li class="list-group-item pointer" >
-    <a href="/abe/structure">edit structure</a>
-  </li>
-  {{/isAuthorized}}
-  {{#if @root.config.users.enable}}
-    {{#isAuthorized '/abe/users/list' @root.user.role.workflow}}
-      <li class="list-group-item pointer">
-        <a href="/abe/users/list">Users</a> 
-      </li>
-    {{/isAuthorized}}
-  {{/if}}
-  <li class="list-group-item pointer">
-    <a href="/abe/plugin/paginate/make">Create pagination</a>
+  <li class="list-group-item pointer" data-config="true" data-manager-show="manager-files">
+    <script>
+      function go() {
+        window.location.href = window.location.origin + '/abe/plugin/abe-paginate/make';
+      }
+    </script>
+    <a href="/abe/plugin/abe-paginate/make" onclick="go()">Create pagination</a>
   </li>
   {{abeImport 'menu-left-addons' manager.config this}}
 </ul>
@@ -46,8 +35,4 @@
     </li>
   </ul>
   {{/if}}
-{{/if}}
-
-{{#if @root.config.users.enable}}
-  <a href="/abe/users/logout" class="btn btn-danger btn-logout">logout</a>
 {{/if}}

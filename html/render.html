@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="/abecms/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/abecms/css/styles.css">
-  <script type="text/javascript" src="/abecms/libs/jquery-2.1.0.min.js"></script>
-  <script type="text/javascript" src="/abecms/libs/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/abejs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/abejs/css/styles.css">
+  <script type="text/javascript" src="/abejs/libs/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="/abejs/libs/bootstrap.min.js"></script>
   <title>Pagination maker</title>
   <style>
     td {border-top: 1px solid #FFF!important;}
@@ -93,10 +93,12 @@
     };
 
     Pagination.prototype.enable = function enable(target) {
-      this.disabled = false;
-      Array.prototype.forEach.call(this.btns, (btn) => btn.classList.remove(CLASSLIST.DISABLED));
-      target.classList.remove('btn-info');
-      target.textContent = TEXTS.BTN_CTA;
+      setTimeout(() => {
+        this.disabled = false;
+        Array.prototype.forEach.call(this.btns, (btn) => btn.classList.remove(CLASSLIST.DISABLED));
+        target.classList.remove('btn-info');
+        target.textContent = TEXTS.BTN_CTA;
+      }, 3000)
     };
 
     Pagination.prototype.ajax = function ajax(target, template) {
