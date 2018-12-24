@@ -1,0 +1,29 @@
+{
+  "name": "abe-paginate",
+  "version": "1.0.0",
+  "description": "paginate plugin for abecms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabrice Labbé",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "walk": "^2.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdFabConnect/abe-paginate.git"
+  },
+  "keywords": [
+    "i18n",
+    "abe",
+    "plugin",
+    "translation"
+  ],
+  "bugs": {
+    "url": "https://github.com/AdFabConnect/abe-paginate/issues"
+  },
+  "homepage": "https://github.com/AdFabConnect/abe-paginate#readme"
+}
