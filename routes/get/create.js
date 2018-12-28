@@ -60,7 +60,8 @@ var getPages = function getPages (abe, templateName, htmlPath, jsonPath, element
         let nbPage = 0;
         let newData = {};
         newData[element.jsonKey] = [];
-        let pager = getPager(abe, htmlPath, data.length);
+
+        let pager = getPager(abe, htmlPath, data.length / count_per_page);
         let currentIndex = 1
 
         let j = 0;
